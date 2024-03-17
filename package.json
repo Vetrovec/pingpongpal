@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "format": "npm run format --workspaces --if-present",
+    "build:backend": "npm run build --workspace @pingpongpal/backend",
+    "build:frontend": "npm run build --workspace @pingpongpal/frontend",
+    "start:backend": "npm run start --workspace @pingpongpal/backend",
+    "start:frontend": "npm run start --workspace @pingpongpal/frontend",
+    "proxy": "node ./proxy"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "http-proxy": "^1.18.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
