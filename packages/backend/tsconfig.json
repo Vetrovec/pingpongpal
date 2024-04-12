@@ -16,6 +16,20 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/": [
+        "./src"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "@pingpongpal/shared": [
+        "libs/shared/src"
+      ],
+      "@pingpongpal/shared/*": [
+        "libs/shared/src/*"
+      ]
+    }
   }
 }

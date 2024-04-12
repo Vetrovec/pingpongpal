@@ -1,3 +1,3 @@
-export type GetStatusResponse = {
+export interface IGetStatusResponse {
   status: string;
-};
+}
