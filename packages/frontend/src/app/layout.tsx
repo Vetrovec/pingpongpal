@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Task Manager</title>
+        <title>Pingpongpal</title>
         <meta name="description" content="Unicorn University project" />
       </head>
       <body className={inter.className}>
