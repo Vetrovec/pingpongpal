@@ -1,4 +1,4 @@
-import { GetStatusResponse } from "@pingpongpal/shared";
+import { IGetStatusResponse } from "@pingpongpal/shared";
 import { Controller, Get } from "@nestjs/common";
 import { AppService } from "./app.service";
 
@@ -7,7 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get("/status")
-  getStatus(): GetStatusResponse {
+  getStatus(): IGetStatusResponse {
     return { status: this.appService.getStatus() };
   }
 }
