@@ -1,6 +1,8 @@
 "use client";
 
+import Button from "@/components/Button";
 import FormattedDate from "@/components/FormattedDate";
+import Input from "@/components/Input";
 import { fetcher, mutationFetcher } from "@/helpers/fetcher";
 import { useUser } from "@/hooks/useUser";
 import { ICreateGameRequest, IListGamesResponse } from "@pingpongpal/shared";
@@ -34,93 +36,82 @@ export default function Home() {
     },
   );
 
+  // Uses tailwind
   return (
-    <div>
-      <h1>Welcome, {user.displayName}!</h1>
+    <div className="container p-4 mx-auto">
+      <h1 className="text-2xl font-bold">Welcome, {user.displayName}!</h1>
 
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Display Name 1</th>
-            <th>Display Name 2</th>
-            <th>Score 1</th>
-            <th>Score 2</th>
-            <th>Created At</th>
-          </tr>
-        </thead>
-        <tbody>
-          {isLoading && (
+      <div className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white">
+        <h2 className="text-xl font-bold">Game history</h2>
+        <table className="w-full border border-gray-300">
+          <thead>
             <tr>
-              <td colSpan={6}>Loading...</td>
+              <th className="border border-gray-300 p-2">Date</th>
+              <th className="border border-gray-300 p-2">Player 1</th>
+              <th className="border border-gray-300 p-2">Player 2</th>
+              <th className="border border-gray-300 p-2">Score</th>
             </tr>
-          )}
-          {error && (
-            <tr>
-              <td colSpan={6}>Error: {error.message}</td>
-            </tr>
-          )}
-          {data?.games.map((game, index) => (
-            <tr key={game.id}>
-              <td>{index + 1}</td>
-              <td>{game.displayName1}</td>
-              <td>{game.displayName2}</td>
-              <td>{game.score1}</td>
-              <td>{game.score2}</td>
-              <td>
-                <FormattedDate date={new Date(game.createdAt)} />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data?.games.map((game) => (
+              <tr key={game.id}>
+                <td className="border border-gray-300 p-2">
+                  <FormattedDate date={new Date(game.createdAt)} />
+                </td>
+                <td className="border border-gray-300 p-2">
+                  {game.displayName1}
+                </td>
+                <td className="border border-gray-300 p-2">
+                  {game.displayName2}
+                </td>
+                <td className="border border-gray-300 p-2">
+                  {game.score1} - {game.score2}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <form>
-        <label>
-          Display Name 1:
-          <input
-            type="text"
-            value={displayName1}
-            onChange={(event) => setDisplayName1(event.target.value)}
-          />
-        </label>
-        <label>
-          Display Name 2:
-          <input
-            type="text"
-            value={displayName2}
-            onChange={(event) => setDisplayName2(event.target.value)}
-          />
-        </label>
-        <label>
-          Score 1:
-          <input
-            type="number"
-            value={score1}
-            onChange={(event) => setScore1(event.target.value)}
-          />
-        </label>
-        <label>
-          Score 2:
-          <input
-            type="number"
-            value={score2}
-            onChange={(event) => setScore2(event.target.value)}
-          />
-        </label>
-        <button
-          type="button"
-          onClick={() =>
-            trigger({
-              displayName1,
-              displayName2,
-              score1: parseInt(score1, 10),
-              score2: parseInt(score2, 10),
-            })
-          }
+      <form
+        className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white"
+        onSubmit={(event) => {
+          event.preventDefault();
+          trigger({
+            displayName1,
+            displayName2,
+            score1: parseInt(score1, 10),
+            score2: parseInt(score2, 10),
+          });
+        }}
+      >
+        <h2 className="text-xl font-bold">Create a game</h2>
+        <Input
+          placeholder="Display Name 1"
+          value={displayName1}
+          onChange={(event) => setDisplayName1(event.target.value)}
+        />
+        <Input
+          placeholder="Display Name 2"
+          value={displayName2}
+          onChange={(event) => setDisplayName2(event.target.value)}
+        />
+        <Input
+          placeholder="Score 1"
+          value={score1}
+          onChange={(event) => setScore1(event.target.value)}
+        />
+        <Input
+          placeholder="Score 2"
+          value={score2}
+          onChange={(event) => setScore2(event.target.value)}
+        />
+        <Button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg"
         >
           Create Game
-        </button>
+        </Button>
       </form>
     </div>
   );

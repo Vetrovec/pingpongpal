@@ -6,7 +6,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { join } from "path";
 import { AuthModule } from "./auth/auth.module";
 import { UserModule } from "./user/user.module";
-import { GameModule } from './game/game.module';
+import { GameModule } from "./game/game.module";
 import appConfig from "./config/app.config";
 
 @Module({
