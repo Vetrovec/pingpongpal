@@ -15,6 +15,10 @@ export class Game implements IGame {
   id: number;
 
   @Exclude()
+  @Column({ type: "bigint" })
+  payloadId: number;
+
+  @Exclude()
   @ManyToOne(() => User)
   user: User;
 
@@ -29,6 +33,9 @@ export class Game implements IGame {
 
   @Column({ type: "smallint", unsigned: true })
   score2: number;
+
+  @Column({ type: "decimal", precision: 3, scale: 1 })
+  temperature: number;
 
   @CreateDateColumn()
   createdAt: Date;

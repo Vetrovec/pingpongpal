@@ -5,7 +5,12 @@ import FormattedDate from "@/components/FormattedDate";
 import Input from "@/components/Input";
 import { fetcher, mutationFetcher } from "@/helpers/fetcher";
 import { useUser } from "@/hooks/useUser";
-import { ICreateGameRequest, IListGamesResponse } from "@pingpongpal/shared";
+import {
+  ICreateAccessKeyRequest,
+  ICreateGameRequest,
+  IListAccessKeysResponse,
+  IListGamesResponse,
+} from "@pingpongpal/shared";
 import { useState } from "react";
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
@@ -13,30 +18,28 @@ import useSWRMutation from "swr/mutation";
 export default function Home() {
   const user = useUser();
 
-  const { data, error, isLoading } = useSWR<IListGamesResponse>(
+  const { data: gameData } = useSWR<IListGamesResponse>(
     "/api/v1/games",
     fetcher,
   );
 
-  const [displayName1, setDisplayName1] = useState("");
-  const [displayName2, setDisplayName2] = useState("");
-  const [score1, setScore1] = useState("");
-  const [score2, setScore2] = useState("");
+  const { data: accessKeyData } = useSWR<IListAccessKeysResponse>(
+    "/api/v1/access-keys",
+    fetcher,
+  );
+
+  const [accessKeyLabel, setAccessKeyLabel] = useState("");
 
   const { trigger } = useSWRMutation(
-    "/api/v1/games",
-    mutationFetcher<ICreateGameRequest>("POST", "Create game"),
+    "/api/v1/access-keys",
+    mutationFetcher<ICreateAccessKeyRequest>("POST", "Create access key"),
     {
       onSuccess: () => {
-        setDisplayName1("");
-        setDisplayName2("");
-        setScore1("");
-        setScore2("");
+        setAccessKeyLabel("");
       },
     },
   );
 
-  // Uses tailwind
   return (
     <div className="container p-4 mx-auto">
       <h1 className="text-2xl font-bold">Welcome, {user.displayName}!</h1>
@@ -53,7 +56,7 @@ export default function Home() {
             </tr>
           </thead>
           <tbody>
-            {data?.games.map((game) => (
+            {gameData?.games.map((game) => (
               <tr key={game.id}>
                 <td className="border border-gray-300 p-2">
                   <FormattedDate date={new Date(game.createdAt)} />
@@ -73,44 +76,52 @@ export default function Home() {
         </table>
       </div>
 
+      <div className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white">
+        <h2 className="text-xl font-bold">Access keys</h2>
+        <table className="w-full border border-gray-300">
+          <thead>
+            <tr>
+              <th className="border border-gray-300 p-2">Label</th>
+              <th className="border border-gray-300 p-2">Key</th>
+              <th className="border border-gray-300 p-2">Created At</th>
+            </tr>
+          </thead>
+          <tbody>
+            {accessKeyData?.accessKeys.map((accessKey) => (
+              <tr key={accessKey.key}>
+                <td className="border border-gray-300 p-2">
+                  {accessKey.label}
+                </td>
+                <td className="border border-gray-300 p-2">{accessKey.key}</td>
+                <td className="border border-gray-300 p-2">
+                  <FormattedDate date={new Date(accessKey.createdAt)} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <form
         className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white"
         onSubmit={(event) => {
           event.preventDefault();
           trigger({
-            displayName1,
-            displayName2,
-            score1: parseInt(score1, 10),
-            score2: parseInt(score2, 10),
+            label: accessKeyLabel,
           });
         }}
       >
-        <h2 className="text-xl font-bold">Create a game</h2>
+        <h2 className="text-xl font-bold">Create Access key</h2>
         <Input
-          placeholder="Display Name 1"
-          value={displayName1}
-          onChange={(event) => setDisplayName1(event.target.value)}
-        />
-        <Input
-          placeholder="Display Name 2"
-          value={displayName2}
-          onChange={(event) => setDisplayName2(event.target.value)}
-        />
-        <Input
-          placeholder="Score 1"
-          value={score1}
-          onChange={(event) => setScore1(event.target.value)}
-        />
-        <Input
-          placeholder="Score 2"
-          value={score2}
-          onChange={(event) => setScore2(event.target.value)}
+          placeholder="Label"
+          value={accessKeyLabel}
+          onChange={(event) => setAccessKeyLabel(event.target.value)}
         />
         <Button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-lg"
         >
-          Create Game
+          Create Access key
         </Button>
       </form>
     </div>
