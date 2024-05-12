@@ -15,4 +15,16 @@ export class GameController {
     const games = await this.gameService.listForUser(user);
     return { games };
   }
+
+  @Get("count")
+  async count(@AuthUser() user: User): Promise<IListGamesResponse> {
+    const games = await this.gameService.listUsersAndGames(user);
+    return { games };
+  }
+
+  @Get("leaderboard")
+  async leaderboard(@AuthUser() user: User): Promise<IListGamesResponse> {
+    const games = await this.gameService.listLeaderboard(user);
+    return { games };
+  }
 }
