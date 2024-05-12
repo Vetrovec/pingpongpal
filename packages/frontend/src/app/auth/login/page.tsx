@@ -25,7 +25,7 @@ export default function Login() {
   return (
     <>
       <Link
-        className="flex justify-center items-center gap-2 h-14 border bg-white border-black rounded-full"
+        className="flex justify-center items-center gap-2 h-14 border bg-white text-black rounded-full"
         href="/api/v1/auth/google"
       >
         <Image width={22} height={22} src={googleImage} alt="Google" />
@@ -61,11 +61,11 @@ export default function Login() {
         {showLoginError && (
           <div className="text-red-500">Something went wrong</div>
         )}
-        <button className="h-14 rounded-xl text-white bg-indigo-950">
+        <button className="h-14 rounded-xl bg-main hover:bg-main-dark">
           Login
         </button>
       </form>
-      <Link className="text-indigo-950" href="/auth/sign-up">
+      <Link className="text-main" href="/auth/sign-up">
         Not registered yet? Create a new account
       </Link>
     </>

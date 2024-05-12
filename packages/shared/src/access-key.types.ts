@@ -12,6 +12,10 @@ export interface ICreateAccessKeyRequest {
   label: string;
 }
 
+export interface IDeleteAccessKeyRequest {
+  key: string;
+}
+
 export interface ICreateAccessKeyResponse {
   accessKey: IAccessKey;
 }

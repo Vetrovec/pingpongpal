@@ -8,6 +8,7 @@ import {
   ICreateAccessKeyResponse,
   IListAccessKeysResponse,
 } from "@pingpongpal/shared";
+import { DeleteAccessKeyDto } from "./dtos/DeleteAccessKey.dto";
 
 @UseGuards(JWTAuthGuard)
 @Controller("access-keys")
@@ -33,8 +34,11 @@ export class AccessKeyController {
   }
 
   @Delete()
-  async delete(@AuthUser() user: User, @Body() key: string) {
-    await this.accessKeyService.deleteByUser(user, key);
+  async delete(
+    @AuthUser() user: User,
+    @Body() deleteAccessKeyDto: DeleteAccessKeyDto,
+  ) {
+    await this.accessKeyService.deleteByUser(user, deleteAccessKeyDto.key);
     return { success: true };
   }
 }

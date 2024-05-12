@@ -4,6 +4,7 @@ export interface IGame {
   displayName2: string;
   score1: number;
   score2: number;
+  temperature: number;
   createdAt: Date;
 }
 

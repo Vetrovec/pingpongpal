@@ -7,7 +7,7 @@ import { fetcher, mutationFetcher } from "@/helpers/fetcher";
 import { useUser } from "@/hooks/useUser";
 import {
   ICreateAccessKeyRequest,
-  ICreateGameRequest,
+  IDeleteAccessKeyRequest,
   IListAccessKeysResponse,
   IListGamesResponse,
 } from "@pingpongpal/shared";
@@ -30,7 +30,7 @@ export default function Home() {
 
   const [accessKeyLabel, setAccessKeyLabel] = useState("");
 
-  const { trigger } = useSWRMutation(
+  const { trigger: triggerCreateAccessKey } = useSWRMutation(
     "/api/v1/access-keys",
     mutationFetcher<ICreateAccessKeyRequest>("POST", "Create access key"),
     {
@@ -40,90 +40,131 @@ export default function Home() {
     },
   );
 
+  const { trigger: triggerDeleteAccessKey } = useSWRMutation(
+    "/api/v1/access-keys",
+    mutationFetcher<IDeleteAccessKeyRequest>("DELETE", "Revoke access key"),
+  );
+
+  const { trigger: triggerLogout } = useSWRMutation(
+    "/api/v1/auth/logout",
+    mutationFetcher("POST"),
+    {
+      onSuccess: () => {
+        window.location.assign("/");
+      },
+    },
+  );
+
   return (
-    <div className="container p-4 mx-auto">
-      <h1 className="text-2xl font-bold">Welcome, {user.displayName}!</h1>
-
-      <div className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white">
-        <h2 className="text-xl font-bold">Game history</h2>
-        <table className="w-full border border-gray-300">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 p-2">Date</th>
-              <th className="border border-gray-300 p-2">Player 1</th>
-              <th className="border border-gray-300 p-2">Player 2</th>
-              <th className="border border-gray-300 p-2">Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            {gameData?.games.map((game) => (
-              <tr key={game.id}>
-                <td className="border border-gray-300 p-2">
-                  <FormattedDate date={new Date(game.createdAt)} />
-                </td>
-                <td className="border border-gray-300 p-2">
-                  {game.displayName1}
-                </td>
-                <td className="border border-gray-300 p-2">
-                  {game.displayName2}
-                </td>
-                <td className="border border-gray-300 p-2">
-                  {game.score1} - {game.score2}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div>
+      <div className="flex p-4 bg-main-dark justify-between">
+        <h1 className="text-xl font-bold">PingPongPal</h1>
+        <div className="flex items-center">
+          <div className="text-md font-medium">{user.displayName}</div>
+          <div className="w-1 h-full mx-2 bg-white opacity-50" />
+          <button onClick={() => triggerLogout()}>Logout</button>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white">
-        <h2 className="text-xl font-bold">Access keys</h2>
-        <table className="w-full border border-gray-300">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 p-2">Label</th>
-              <th className="border border-gray-300 p-2">Key</th>
-              <th className="border border-gray-300 p-2">Created At</th>
-            </tr>
-          </thead>
-          <tbody>
-            {accessKeyData?.accessKeys.map((accessKey) => (
-              <tr key={accessKey.key}>
-                <td className="border border-gray-300 p-2">
-                  {accessKey.label}
-                </td>
-                <td className="border border-gray-300 p-2">{accessKey.key}</td>
-                <td className="border border-gray-300 p-2">
-                  <FormattedDate date={new Date(accessKey.createdAt)} />
-                </td>
+      <div className="container p-2 mx-auto">
+        <div className="flex flex-col gap-4 border border-border p-4 bg-secondary">
+          <h2 className="text-xl font-bold text-main">Game history</h2>
+          <table className="w-full border border-border">
+            <thead>
+              <tr className="text-main">
+                <th className="border border-border p-2">Date</th>
+                <th className="border border-border p-2">Player 1</th>
+                <th className="border border-border p-2">Player 2</th>
+                <th className="border border-border p-2">Score</th>
+                <th className="border border-border p-2">Temperature</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {gameData?.games.map((game) => (
+                <tr key={game.id}>
+                  <td className="border border-border p-2">
+                    <FormattedDate date={new Date(game.createdAt)} />
+                  </td>
+                  <td className="border border-border p-2">
+                    {game.displayName1}
+                  </td>
+                  <td className="border border-border p-2">
+                    {game.displayName2}
+                  </td>
+                  <td className="border border-border p-2">
+                    {game.score1} - {game.score2}
+                  </td>
+                  <td className="border border-border p-2">
+                    {game.temperature}°C
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-      <form
-        className="flex flex-col gap-4 border border-gray-300 p-4 mt-4 bg-white"
-        onSubmit={(event) => {
-          event.preventDefault();
-          trigger({
-            label: accessKeyLabel,
-          });
-        }}
-      >
-        <h2 className="text-xl font-bold">Create Access key</h2>
-        <Input
-          placeholder="Label"
-          value={accessKeyLabel}
-          onChange={(event) => setAccessKeyLabel(event.target.value)}
-        />
-        <Button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+        <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+          <h2 className="text-xl font-bold text-main">Access keys</h2>
+          <table className="w-full border border-border">
+            <thead>
+              <tr className="text-main">
+                <th className="border border-border p-2">Label</th>
+                <th className="border border-border p-2">Key</th>
+                <th className="border border-border p-2">Created At</th>
+                <th className="border border-border p-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {accessKeyData?.accessKeys.map((accessKey) => (
+                <tr key={accessKey.key}>
+                  <td className="border border-border p-2">
+                    {accessKey.label}
+                  </td>
+                  <td className="border border-border p-2">{accessKey.key}</td>
+                  <td className="border border-border p-2">
+                    <FormattedDate date={new Date(accessKey.createdAt)} />
+                  </td>
+                  <td className="border border-border p-2">
+                    <div className="flex justify-around">
+                      <button
+                        className="text-center text-red-500"
+                        onClick={() =>
+                          triggerDeleteAccessKey({ key: accessKey.key })
+                        }
+                      >
+                        Revoke
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <form
+          className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary"
+          onSubmit={(event) => {
+            event.preventDefault();
+            triggerCreateAccessKey({
+              label: accessKeyLabel,
+            });
+          }}
         >
-          Create Access key
-        </Button>
-      </form>
+          <h2 className="text-xl font-bold text-main">Create Access key</h2>
+          <div className="flex items-center gap-4">
+            <Input
+              className="flex-grow"
+              placeholder="Label"
+              value={accessKeyLabel}
+              onChange={(event) => setAccessKeyLabel(event.target.value)}
+            />
+            <Button type="submit" className="px-12 py-2 border-none rounded-lg">
+              Create Access key
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

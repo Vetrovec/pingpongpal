@@ -5,7 +5,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export default function Input({ className, ...rest }: InputProps) {
   return (
     <input
-      className={`h-10 px-2 border border-gray-300 bg-white rounded-lg focus:outline-none ${
+      className={`h-10 px-2 border text-black border-gray-300 bg-white rounded-lg focus:outline-none ${
         className ?? ""
       }`}
       {...rest}

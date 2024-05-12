@@ -15,8 +15,8 @@ export class Game implements IGame {
   id: number;
 
   @Exclude()
-  @Column({ type: "bigint" })
-  payloadId: number;
+  @Column({ type: "uuid" })
+  payloadId: string;
 
   @Exclude()
   @ManyToOne(() => User)
