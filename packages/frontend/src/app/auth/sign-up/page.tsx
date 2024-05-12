@@ -30,7 +30,7 @@ export default function SignUp() {
   return (
     <>
       <Link
-        className="flex justify-center items-center gap-2 h-14 border bg-white border-black rounded-full"
+        className="flex justify-center items-center gap-2 h-14 border bg-white text-black rounded-full"
         href="/api/v1/auth/google"
       >
         <Image width={22} height={22} src={googleImage} alt="Google" />
@@ -87,13 +87,13 @@ export default function SignUp() {
           <div className="text-red-500">Something went wrong</div>
         )}
         <button
-          className="h-14 rounded-xl text-white bg-indigo-950 disabled:opacity-50"
+          className="h-14 rounded-xl bg-main disabled:opacity-50"
           disabled={!password || password !== passwordAgain}
         >
           Sign Up
         </button>
       </form>
-      <Link className="text-indigo-950" href="/auth/login">
+      <Link className="text-main" href="/auth/login">
         Already registered? Login
       </Link>
     </>

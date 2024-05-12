@@ -15,7 +15,7 @@ type ButtonProps = {
 
 export default function Button(props: ButtonProps) {
   const backgroundColor = {
-    primary: "bg-blue-500",
+    primary: "bg-main",
     secondary: "bg-slate-200",
   }[props.variant ?? "primary"];
 
@@ -25,7 +25,7 @@ export default function Button(props: ButtonProps) {
   }[props.variant ?? "primary"];
 
   const hoverBackgroundColor = {
-    primary: "hover:bg-blue-600",
+    primary: "hover:bg-main-dark",
     secondary: "hover:bg-slate-100",
   }[props.variant ?? "primary"];
 

@@ -1,7 +1,10 @@
 import { ICreateGameRequest } from "@pingpongpal/shared";
-import { IsInt, IsString, Length, Max, Min } from "class-validator";
+import { IsInt, IsNumber, IsString, Length, Max, Min } from "class-validator";
 
 export class CreateGameDto implements ICreateGameRequest {
+  @IsString()
+  payloadId: string;
+
   @IsString()
   @Length(1, 128)
   displayName1: string;
@@ -19,4 +22,7 @@ export class CreateGameDto implements ICreateGameRequest {
   @Min(0)
   @Max(65535)
   score2: number;
+
+  @IsNumber()
+  temperature: number;
 }

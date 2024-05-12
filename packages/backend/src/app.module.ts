@@ -7,6 +7,8 @@ import { join } from "path";
 import { AuthModule } from "./auth/auth.module";
 import { UserModule } from "./user/user.module";
 import { GameModule } from "./game/game.module";
+import { AccessKeyModule } from "./access-key/access-key.module";
+import { IotModule } from "./iot/iot.module";
 import appConfig from "./config/app.config";
 
 @Module({
@@ -29,6 +31,8 @@ import appConfig from "./config/app.config";
     AuthModule,
     UserModule,
     GameModule,
+    AccessKeyModule,
+    IotModule,
   ],
   controllers: [AppController],
   providers: [AppService],
