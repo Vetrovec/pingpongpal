@@ -6,5 +6,5 @@ import { redirect } from "next/navigation";
 export default function Home() {
   useUser();
 
-  redirect("/home");
+  redirect("/home/history");
 }

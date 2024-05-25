@@ -9,6 +9,7 @@ import { UserModule } from "./user/user.module";
 import { GameModule } from "./game/game.module";
 import { AccessKeyModule } from "./access-key/access-key.module";
 import { IotModule } from "./iot/iot.module";
+import { StatisticsModule } from "./statistics/statistics.module";
 import appConfig from "./config/app.config";
 
 @Module({
@@ -33,6 +34,7 @@ import appConfig from "./config/app.config";
     GameModule,
     AccessKeyModule,
     IotModule,
+    StatisticsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
