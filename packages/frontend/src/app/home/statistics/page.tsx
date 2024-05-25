@@ -96,8 +96,8 @@ return (
         <table className="w-full border border-border">
           <thead>
             <tr className="text-main">
-              <th className="border border-border p-2">Player</th>
-              <th className="border border-border p-2">Count</th>
+              <th className="border border-border p-2 w-1/2">Player</th>
+              <th className="border border-border p-2 w-1/2">Count</th>
             </tr>
           </thead>
           <tbody>
@@ -116,8 +116,8 @@ return (
         <table className="w-full border border-border">
           <thead>
             <tr className="text-main">
-              <th className="border border-border p-2">Player</th>
-              <th className="border border-border p-2">Wins</th>
+              <th className="border border-border p-2 w-1/2">Player</th>
+              <th className="border border-border p-2 w-1/2">Wins</th>
             </tr>
           </thead>
           <tbody>
@@ -136,8 +136,8 @@ return (
         <table className="w-full border border-border">
           <thead>
             <tr className="text-main">
-              <th className="border border-border p-2">Temperature type</th>
-              <th className="border border-border p-2">Temperature</th>
+              <th className="border border-border p-2 w-1/2">Temperature type</th>
+              <th className="border border-border p-2 w-1/2">Temperature</th>
             </tr>
           </thead>
           <tbody>
@@ -168,10 +168,10 @@ return (
         <table className="w-full border border-border">
           <thead>
             <tr className="text-main">
-              <th className="border border-border p-2">Player</th>
-              <th className="border border-border p-2">Wins</th>
-              <th className="border border-border p-2">Losses</th>
-              <th className="border border-border p-2">Ratio</th>
+              <th className="border border-border p-2 w-1/4">Player</th>
+              <th className="border border-border p-2 w-1/4">Wins</th>
+              <th className="border border-border p-2 w-1/4">Losses</th>
+              <th className="border border-border p-2 w-1/4">Ratio</th>
             </tr>
           </thead>
           <tbody>
