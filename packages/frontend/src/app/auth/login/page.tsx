@@ -41,7 +41,7 @@ export default function Login() {
         <label>
           <div className="px-2">Email</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -51,7 +51,7 @@ export default function Login() {
         <label>
           <div className="px-2">Password</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="password"
             placeholder="Enter your password"
             value={password}
