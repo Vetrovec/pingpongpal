@@ -2,7 +2,7 @@
 
 import { fetcher } from "@/helpers/fetcher";
 import useSWR from "swr";
-import { Pie, Bar, Line} from 'react-chartjs-2';
+import { Pie, Bar} from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement, LineElement} from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement, LineElement);
@@ -163,21 +163,45 @@ return (
         </table>
       </div>
 
+      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+        <h2 className="text-xl font-bold text-main">Win/Loss Ratio</h2>
+        <table className="w-full border border-border">
+          <thead>
+            <tr className="text-main">
+              <th className="border border-border p-2">Player</th>
+              <th className="border border-border p-2">Wins</th>
+              <th className="border border-border p-2">Losses</th>
+              <th className="border border-border p-2">Ratio</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data?.leaderboard.map((row: any, i: number) => (
+              <tr key={i}>
+                <td className="border border-border p-2">{row.nickname}</td>
+                <td className="border border-border p-2">{row.totalWins}</td>
+                <td className="border border-border p-2">{row.totalLosses}</td>
+                <td className="border border-border p-2">
+                  {roundToTwoDecimals(row.winLossRatio) + "%"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
-      <h2 className="text-xl font-bold text-main">Games played</h2>
-      <div style={{ width: '100%', maxWidth: '300px' }}>
-        <Pie data={gameCountData} />
+        <h2 className="text-xl font-bold text-main">Games played</h2>
+        <div style={{ width: '100%', maxWidth: '300px' }}>
+          <Pie data={gameCountData} />
+        </div>
       </div>
-    </div>
 
-    <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
-      <h2 className="text-xl font-bold text-main">Users by total wins</h2>
+      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+        <h2 className="text-xl font-bold text-main">Users by total wins</h2>
         <div style={{ width: '100%', maxWidth: '500px' }}>
           <Bar data={totalWinsData} />
         </div>
       </div>
-
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
       <h2 className="text-xl font-bold text-main">Temperatures</h2>
@@ -185,10 +209,6 @@ return (
         <Bar data={temperatureData}  />
         </div>
       </div>
-        
-
-
     </>
-
 );
 }

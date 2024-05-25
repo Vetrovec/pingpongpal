@@ -30,25 +30,35 @@ export class StatisticsService {
 
   // users leaderboard
   async listLeaderboard(user: User) {
-	const rawQuery = `
-    SELECT nickname, SUM(winCount) AS totalWins
-    FROM (
-      SELECT displayName1 AS nickname, 
-             CASE WHEN score1 > score2 THEN 1 ELSE 0 END AS winCount
-      FROM game
-      WHERE userId = ${user.id}
-      UNION ALL
-      SELECT displayName2 AS nickname, 
-             CASE WHEN score2 > score1 THEN 1 ELSE 0 END AS winCount
-      FROM game
-      WHERE userId = ${user.id}
-    ) AS combinedResults
-    GROUP BY nickname
-    ORDER BY totalWins DESC
-  `;
-
-    return this.gameRepository.query(rawQuery); // Execute raw SQL directly
-}
+    const rawQuery = `
+    SELECT 
+      nickname,
+      SUM(winCount) AS totalWins,
+      SUM(lossCount) AS totalLosses,
+    CASE 
+      WHEN SUM(lossCount) = 0 THEN 100
+      ELSE (SUM(winCount) * 100.0) / (SUM(winCount) + SUM(lossCount))
+    END AS winLossRatio
+  FROM (
+    SELECT 
+      displayName1 AS nickname,
+      CASE WHEN score1 > score2 THEN 1 ELSE 0 END AS winCount,
+      CASE WHEN score1 < score2 THEN 1 ELSE 0 END AS lossCount
+    FROM game
+    WHERE userId = ${user.id}
+    UNION ALL
+    SELECT displayName2 AS nickname,
+      CASE WHEN score2 > score1 THEN 1 ELSE 0 END AS winCount,
+      CASE WHEN score2 < score1 THEN 1 ELSE 0 END AS lossCount
+    FROM game
+    WHERE userId = ${user.id}
+  ) AS combinedResults
+  GROUP BY nickname
+  ORDER BY totalWins DESC
+    `; 
+  
+      return this.gameRepository.query(rawQuery); // Execute raw SQL directly
+  }
 
 
 async listTemperatures(user: User) {
