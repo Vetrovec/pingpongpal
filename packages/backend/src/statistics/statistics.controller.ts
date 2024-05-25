@@ -13,7 +13,9 @@ export class StatisticsController {
   async getStatistics(@AuthUser() user: User): Promise<any> {
     const count = await this.statisticsService.listUsersAndGames(user);
     const leaderboard = await this.statisticsService.listLeaderboard(user);
+    const temperatures = await this.statisticsService.listTemperatures(user);
 
-    return { count, leaderboard };
+
+    return { count, leaderboard, temperatures};
   }
 }
