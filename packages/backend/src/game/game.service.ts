@@ -11,11 +11,14 @@ export class GameService {
     private gameRepository: Repository<Game>,
   ) {}
 
-  async listForUser(user: User) {
-    const games = await this.gameRepository.find({
+  async listForUser(user: User, skip = 0, take = 10) {
+    const gamesAndCount = await this.gameRepository.findAndCount({
       where: { user: { id: user.id } },
+      order: { createdAt: "DESC" },
+      skip,
+      take,
     });
 
-    return games;
+    return gamesAndCount;
   }
 }

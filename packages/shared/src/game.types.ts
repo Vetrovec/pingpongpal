@@ -10,6 +10,7 @@ export interface IGame {
 
 export interface IListGamesResponse {
   games: IGame[];
+  totalCount: number;
 }
 
 export interface ICreateGameRequest {

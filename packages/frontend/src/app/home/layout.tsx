@@ -40,8 +40,10 @@ export default function HomeLayout({
         <div className="w-48 flex flex-col items-stretch gap-2 border border-border p-4 bg-secondary">
           <Link href="/home/history">
             <button
-              className={`w-full p-1 rounded-md hover:bg-main-dark ${
-                pathname === "/home/history" ? "bg-main" : "bg-border"
+              className={`w-full p-1 rounded-md ${
+                pathname === "/home/history"
+                  ? "bg-main"
+                  : "bg-border hover:bg-main-dark"
               }`}
             >
               History
@@ -49,8 +51,10 @@ export default function HomeLayout({
           </Link>
           <Link href="/home/statistics">
             <button
-              className={`w-full p-1 rounded-md hover:bg-main-dark ${
-                pathname === "/home/statistics" ? "bg-main" : "bg-border"
+              className={`w-full p-1 rounded-md ${
+                pathname === "/home/statistics"
+                  ? "bg-main"
+                  : "bg-border hover:bg-main-dark"
               }`}
             >
               Statistics
@@ -58,8 +62,10 @@ export default function HomeLayout({
           </Link>
           <Link href="/home/access-keys">
             <button
-              className={`w-full p-1 rounded-md hover:bg-main-dark ${
-                pathname === "/home/access-keys" ? "bg-main" : "bg-border"
+              className={`w-full p-1 rounded-md ${
+                pathname === "/home/access-keys"
+                  ? "bg-main"
+                  : "bg-border hover:bg-main-dark"
               }`}
             >
               Access Keys
