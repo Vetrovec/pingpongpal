@@ -55,20 +55,18 @@ export class StatisticsService {
   ) AS combinedResults
   GROUP BY nickname
   ORDER BY totalWins DESC
-    `; 
-  
-      return this.gameRepository.query(rawQuery); // Execute raw SQL directly
+    `;
+
+    return this.gameRepository.query(rawQuery); // Execute raw SQL directly
   }
 
-
-async listTemperatures(user: User) {
-	const temperatures = await this.gameRepository.query(`
+  async listTemperatures(user: User) {
+    const temperatures = await this.gameRepository.query(`
 		SELECT AVG(temperature) AS averageTemp, MAX(temperature) AS highestTemp, MIN(temperature) AS lowestTemp
 		FROM game
 		WHERE userId = ${user.id}
 	`);
 
-	return temperatures;
-}
-
+    return temperatures;
+  }
 }

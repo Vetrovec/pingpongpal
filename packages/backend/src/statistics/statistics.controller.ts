@@ -15,7 +15,6 @@ export class StatisticsController {
     const leaderboard = await this.statisticsService.listLeaderboard(user);
     const temperatures = await this.statisticsService.listTemperatures(user);
 
-
-    return { count, leaderboard, temperatures};
+    return { count, leaderboard, temperatures };
   }
 }
