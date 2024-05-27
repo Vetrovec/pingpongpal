@@ -46,7 +46,7 @@ export default function SignUp() {
         <label>
           <div className="px-2">Email</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -56,7 +56,7 @@ export default function SignUp() {
         <label>
           <div className="px-2">Display Name</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="text"
             placeholder="Enter your display name"
             value={displayName}
@@ -66,7 +66,7 @@ export default function SignUp() {
         <label>
           <div className="px-2">Password</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="password"
             placeholder="Enter your password"
             value={password}
@@ -76,7 +76,7 @@ export default function SignUp() {
         <label>
           <div className="px-2">Repeat Password</div>
           <input
-            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none"
+            className="w-full h-14 px-2 border border-gray-300 rounded-lg focus:outline-none text-black"
             type="password"
             placeholder="Enter your password again"
             value={passwordAgain}
