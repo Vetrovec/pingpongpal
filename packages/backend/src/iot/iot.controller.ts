@@ -18,4 +18,9 @@ export class IotController {
     const game = await this.iotService.createByUser(user, createGameDto);
     return { game };
   }
+
+  @Post("verify")
+  async verifyAccessKey(@AuthUser() user: User) {
+    return { user };
+  }
 }
