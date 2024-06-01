@@ -16,6 +16,7 @@ import {
   LineElement,
 } from "chart.js";
 import { IGetStatisticsResponse } from "@pingpongpal/shared";
+import Table from "@/components/Table";
 
 ChartJS.register(
   ArcElement,
@@ -119,108 +120,52 @@ export default function Home() {
     <>
       <div className="flex flex-col gap-4 border border-border p-4 bg-secondary">
         <h2 className="text-xl font-bold text-main">Games played</h2>
-        <table className="w-full border border-border">
-          <thead>
-            <tr className="text-main">
-              <th className="border border-border p-2 w-1/2">Player</th>
-              <th className="border border-border p-2 w-1/2">Count</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.count.map((row: any, i: number) => (
-              <tr key={i}>
-                <td className="border border-border p-2">{row.nickname}</td>
-                <td className="border border-border p-2">{row.gameCount}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Table
+          columns={["Player", "Count"]}
+          rows={data?.count.map((row) => [row.nickname, row.gameCount])}
+        />
       </div>
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
         <h2 className="text-xl font-bold text-main">Total wins</h2>
-        <table className="w-full border border-border">
-          <thead>
-            <tr className="text-main">
-              <th className="border border-border p-2 w-1/2">Player</th>
-              <th className="border border-border p-2 w-1/2">Wins</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.leaderboard.map((row: any, i: number) => (
-              <tr key={i}>
-                <td className="border border-border p-2">{row.nickname}</td>
-                <td className="border border-border p-2">{row.totalWins}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Table
+          columns={["Player", "Wins"]}
+          rows={data?.leaderboard.map((row) => [row.nickname, row.totalWins])}
+        />
       </div>
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
         <h2 className="text-xl font-bold text-main">Temperatures</h2>
-        <table className="w-full border border-border">
-          <thead>
-            <tr className="text-main">
-              <th className="border border-border p-2 w-1/2">
-                Temperature type
-              </th>
-              <th className="border border-border p-2 w-1/2">Temperature</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-border p-2">Average temperature</td>
-              {data?.temperatures.map((row: any, i: number) => (
-                <td key={i} className="border border-border p-2">
-                  {roundToTwoDecimals(row.averageTemp)}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="border border-border p-2">Highest temperature</td>
-              {data?.temperatures.map((row: any, i: number) => (
-                <td key={i} className="border border-border p-2">
-                  {roundToTwoDecimals(row.highestTemp)}
-                </td>
-              ))}
-            </tr>
-            <tr>
-              <td className="border border-border p-2">Lowest temperature</td>
-              {data?.temperatures.map((row: any, i: number) => (
-                <td key={i} className="border border-border p-2">
-                  {roundToTwoDecimals(row.lowestTemp)}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        <Table
+          columns={["Temperature type", "Temperature"]}
+          rows={[
+            [
+              "Average temperature",
+              roundToTwoDecimals(temperatures?.averageTemp ?? ""),
+            ],
+            [
+              "Highest temperature",
+              roundToTwoDecimals(temperatures?.highestTemp ?? ""),
+            ],
+            [
+              "Lowest temperature",
+              roundToTwoDecimals(temperatures?.lowestTemp ?? ""),
+            ],
+          ]}
+        />
       </div>
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
         <h2 className="text-xl font-bold text-main">Win/Loss Ratio</h2>
-        <table className="w-full border border-border">
-          <thead>
-            <tr className="text-main">
-              <th className="border border-border p-2 w-1/4">Player</th>
-              <th className="border border-border p-2 w-1/4">Wins</th>
-              <th className="border border-border p-2 w-1/4">Losses</th>
-              <th className="border border-border p-2 w-1/4">Ratio</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.leaderboard.map((row: any, i: number) => (
-              <tr key={i}>
-                <td className="border border-border p-2">{row.nickname}</td>
-                <td className="border border-border p-2">{row.totalWins}</td>
-                <td className="border border-border p-2">{row.totalLosses}</td>
-                <td className="border border-border p-2">
-                  {roundToTwoDecimals(row.winLossRatio) + "%"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <Table
+          columns={["Player", "Wins", "Losses", "Ratio"]}
+          rows={data?.leaderboard.map((row) => [
+            row.nickname,
+            row.totalWins,
+            row.totalLosses,
+            roundToTwoDecimals(row.winLossRatio) + "%",
+          ])}
+        />
       </div>
 
       <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
