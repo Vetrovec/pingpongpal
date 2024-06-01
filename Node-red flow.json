@@ -1,0 +1,2265 @@
+[
+    {
+        "id": "2c41a2bd.aa36ae",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "29fba84a.b2af58",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bf6a3c96.35048",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#f2a807",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "PingPong app.",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "827c77f8e2d0eb8f",
+        "type": "ui_tab",
+        "name": "Player_1",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7f0a62282ff138fd",
+        "type": "ui_group",
+        "name": "Teplotní graf",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 6,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f624b0895a645712",
+        "type": "ui_group",
+        "name": "Aktuální teplota",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 5,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cbfe147805ef63ea",
+        "type": "ui_group",
+        "name": "SET",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 7,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8c6227bd9d563549",
+        "type": "ui_group",
+        "name": "SET",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 8,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7915415d78f4b399",
+        "type": "ui_group",
+        "name": "POINTS",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 9,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f597b56014de17ec",
+        "type": "ui_group",
+        "name": "POINTS",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 10,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "93cbfe63886041d3",
+        "type": "ui_group",
+        "name": "Nastavení teploty max.",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 12,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a0e4642e1297919f",
+        "type": "ui_group",
+        "name": "Nastavení teploty min.",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 11,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "af03595472ebe057",
+        "type": "ui_group",
+        "name": "Čas",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 18,
+        "disp": false,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "350b396888694285",
+        "type": "ui_group",
+        "name": "Nová hra",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 14,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a6948a1ea178a2af",
+        "type": "ui_group",
+        "name": "Další set",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 16,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "77e5bfd6714b51f1",
+        "type": "ui_group",
+        "name": "Token",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 17,
+        "disp": false,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6e439243f014d9f9",
+        "type": "ui_group",
+        "name": "Podává",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 13,
+        "disp": false,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ba84bca1307aab41",
+        "type": "ui_group",
+        "name": "Stopky",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 15,
+        "disp": false,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2165f796bb8efd15",
+        "type": "ui_group",
+        "name": "Led",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 19,
+        "disp": false,
+        "width": "2",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "43ad30c161a69b3e",
+        "type": "ui_group",
+        "name": "Hráč 1:",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35669f3d67377472",
+        "type": "ui_group",
+        "name": "Hráč 2:",
+        "tab": "827c77f8e2d0eb8f",
+        "order": 3,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d0cdacc67e481255",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "cbfe147805ef63ea",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "06707960667af81a",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "cbfe147805ef63ea",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "12484070293b0a7a",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "cbfe147805ef63ea",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e230e75dc49e78db",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "8c6227bd9d563549",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "67d0a16660f0c3da",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "8c6227bd9d563549",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9406f643855d9aab",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "8c6227bd9d563549",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5f571c778fc9ae02",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2ed8750a6801252b",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "04c3d562ba1ac175",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5089aa8a656886dd",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "06a789fc6c0eff64",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bf3cd2e2364d9044",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f15e2452199f240f",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "00812c4611ca42b1",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "7915415d78f4b399",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d98717b0fc3153ad",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "aaece78e587c3786",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b995cb05d77dc848",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "702e57fe7c401d60",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "baaefcdb75026a76",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ceec848221faa669",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3357e27d58a90b7a",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "67be301899acfb63",
+        "type": "ui_spacer",
+        "z": "2c41a2bd.aa36ae",
+        "name": "spacer",
+        "group": "f597b56014de17ec",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eafde4cc4f9e5e04",
+        "type": "mqtt in",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "topic": "node/skeleton:0/thermometer/0:1/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "29fba84a.b2af58",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "dd4206d1be094680",
+                "16ac69b440a5326c",
+                "410abece59a73955"
+            ]
+        ]
+    },
+    {
+        "id": "784332c655596350",
+        "type": "mqtt in",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "topic": "node/skeleton:0/push-button/-/event-count",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "29fba84a.b2af58",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 720,
+        "wires": [
+            [
+                "3a7ef31a0bff6316"
+            ]
+        ]
+    },
+    {
+        "id": "b932c18b168629f7",
+        "type": "ui_slider",
+        "z": "2c41a2bd.aa36ae",
+        "name": "°C max.",
+        "label": "°C",
+        "tooltip": "",
+        "group": "93cbfe63886041d3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "3f3f2e89917328a2"
+            ]
+        ]
+    },
+    {
+        "id": "04647e43cc3a7cf6",
+        "type": "ui_slider",
+        "z": "2c41a2bd.aa36ae",
+        "name": "°C min.",
+        "label": "°C",
+        "tooltip": "",
+        "group": "a0e4642e1297919f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "8c812323fe46d722"
+            ]
+        ]
+    },
+    {
+        "id": "5e041082926694de",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "cbfe147805ef63ea",
+        "order": 1,
+        "width": 8,
+        "height": 3,
+        "name": "Set_player_1",
+        "label": "",
+        "format": "<font size = 10>{{msg.set_1}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "40",
+        "color": "#1707f2",
+        "x": 2150,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "a62c7d9afd116e62",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "8c6227bd9d563549",
+        "order": 1,
+        "width": 8,
+        "height": 3,
+        "name": "Set_player_2",
+        "label": "",
+        "format": "<font size = 10>{{msg.set_2}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#e5a110",
+        "x": 2150,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "08a1484204d5887f",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "7915415d78f4b399",
+        "order": 1,
+        "width": 8,
+        "height": 8,
+        "name": "Points_player_1",
+        "label": "",
+        "format": "<font size = 50>{{msg.score1}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "1",
+        "color": "#e5a110",
+        "x": 2160,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "3ce2fc62ac476506",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "f597b56014de17ec",
+        "order": 1,
+        "width": 8,
+        "height": 8,
+        "name": "Points_player_2",
+        "label": "",
+        "format": "<font size = 8>{{msg.score2}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#e5a110",
+        "x": 2160,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "410abece59a73955",
+        "type": "ui_gauge",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Actual temperature",
+        "group": "f624b0895a645712",
+        "order": 1,
+        "width": 8,
+        "height": 5,
+        "gtype": "donut",
+        "title": "",
+        "label": "°C",
+        "format": "{{msg.payload.toFixed(1)}}",
+        "min": "20",
+        "max": "26",
+        "colors": [
+            "#f50a0a",
+            "#07ed54",
+            "#ea0606"
+        ],
+        "seg1": "set msg.ui_control.seg1",
+        "seg2": "set msg.ui_control.seg2",
+        "diff": false,
+        "className": "",
+        "x": 2170,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "16ac69b440a5326c",
+        "type": "ui_chart",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Temperature chart",
+        "group": "7f0a62282ff138fd",
+        "order": 1,
+        "width": 8,
+        "height": 5,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "20",
+        "ymax": "26",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#e5a110",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 2170,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e3ed2c241ce0c8c",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "af03595472ebe057",
+        "order": 1,
+        "width": 4,
+        "height": 2,
+        "name": "Time",
+        "label": "",
+        "format": "<font size = 6>{{msg.tema}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#e5a110",
+        "x": 2130,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "f28aa7e0ac5bd0ae",
+        "type": "ui_button",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "group": "350b396888694285",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "passthru": false,
+        "label": "<font size = 5>Nová hra",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 150,
+        "y": 1120,
+        "wires": [
+            [
+                "16bfa63bab25ddae"
+            ]
+        ]
+    },
+    {
+        "id": "22cdc2320c580800",
+        "type": "ui_button",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "group": "a6948a1ea178a2af",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "passthru": false,
+        "label": "<font size = 5>Vynulovat set",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "4",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "b8fd2cefdabab500"
+            ]
+        ]
+    },
+    {
+        "id": "d01d391a9e428a11",
+        "type": "http request",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://pingpongpal.vetrovec.com/api/v1/iot/games",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1250,
+        "y": 500,
+        "wires": [
+            [
+                "cd388c7d2828268a"
+            ]
+        ]
+    },
+    {
+        "id": "f3e21a4cdb50071e",
+        "type": "inject",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1320,
+        "wires": [
+            [
+                "f3b1a0b2bc419e85"
+            ]
+        ]
+    },
+    {
+        "id": "8f71e5c7f0a916a7",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Začít novou hru?",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 860,
+        "wires": [
+            [
+                "4cfd3048549abb90"
+            ]
+        ]
+    },
+    {
+        "id": "b8fd2cefdabab500",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Opravdu chcete vynulovat set?",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 640,
+        "wires": [
+            [
+                "2039635309c00ca6"
+            ]
+        ]
+    },
+    {
+        "id": "3f3f2e89917328a2",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Sector_change_max",
+        "func": "var r = msg.payload;\nmsg.ui_control = { seg2: r };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "dc270e174b4f21ed",
+                "410abece59a73955"
+            ]
+        ]
+    },
+    {
+        "id": "8c812323fe46d722",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Sector_change_min",
+        "func": "var r = msg.payload;\nmsg.ui_control = { seg1: r };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "410abece59a73955",
+                "4cfb178066dd1367"
+            ]
+        ]
+    },
+    {
+        "id": "359272b7f0e1d9cc",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Main function",
+        "func": "var count1 = flow.get('count1') || 0;\nvar count2 = flow.get('count2') || 0;\nvar set1 = flow.get('count3') || 0;\nvar set2 = flow.get('count4') || 0;\nvar name1 = flow.get('name1') || \"Host 1\";\nvar name2 = flow.get('name2') || \"Host 2\";\nvar token = flow.get('token');\nvar temperature = flow.get('temp') || 0;\nvar unixTimeMillis = Date.now();\nvar randomUUID = flow.get('random') || 0;\nvar sectorMax = flow.get('sectorMax') || 0;\nvar sectorMin = flow.get('sectorMin') || 0;\nvar sendMsg = flow.get('sendMsg') || false;\n\nif (msg.payload == 1)\n{\n    count1 += 1;\n    flow.set('count1', count1);\n}\nelse if (msg.payload == 2)\n{\n    count2 += 1;\n    flow.set('count2', count2);\n}\nvar total = Math.abs(count1 - count2);\nif (count1 >= 11 && total >= 2) \n{\n    set1 += 1;\n    flow.set('count3', set1);\n    sendMsg = true;\n    flow.set('sendMsg', sendMsg);\n\n    if (set1 == 3) {\n        msg.tema = name1 + \"     \" + set1 + \" : \" + set2 + \"     \" + name2;\n        flow.set('disable', 0);\n        flow.set('count3', 0);\n        flow.set('count4', 0);\n    }\n\n    flow.set('count1', null);\n    flow.set('count2', null);\n}\nelse if (count2 >= 11 && total >= 2) \n{\n    set2 += 1;\n    flow.set('count4', set2);\n    sendMsg = true;\n    flow.set('sendMsg', sendMsg);\n    \n    if (set2 == 3) {\n        msg.tema = name2 + \"     \" + set2 + \" : \" + set1 + \"     \" + name1;\n        flow.set('disable', 0);\n        flow.set('count3', 0);\n        flow.set('count4', 0);\n    }\n    \n    flow.set('count1', null);\n    flow.set('count2', null);\n    \n}\n\nmsg.displayName1 = name1;\nmsg.displayName2 = name2;\nmsg.temperature = temperature;\nmsg.timestamp = unixTimeMillis;\nmsg.payload = randomUUID;\nmsg.token = token;\nmsg.sectorMax = sectorMax;\nmsg.sectorMin = sectorMin;\nmsg.set_1 = set1;\nmsg.set_2 = set2;\nmsg.score1 = count1;\nmsg.score2 = count2;\nmsg.topic = sendMsg;\n\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 640,
+        "wires": [
+            [
+                "08a1484204d5887f",
+                "3ce2fc62ac476506",
+                "5e041082926694de",
+                "a62c7d9afd116e62",
+                "08975feac78b50ba"
+            ]
+        ]
+    },
+    {
+        "id": "b3b5ce9432cc0e5c",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Reset",
+        "func": "if (msg.payload == \"OK\"){\n    flow.set('count1', 0);\n    flow.set('count2', 0); \n    return msg; \n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 640,
+        "wires": [
+            [
+                "359272b7f0e1d9cc"
+            ]
+        ]
+    },
+    {
+        "id": "dd6131b23db63a65",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_name1",
+        "func": "if (msg.payload != \"Cancel\" && msg.payload != null && msg.payload != \"\"){\n    var name = msg.payload;\n    flow.set('name1', name);\n    return msg;\n}\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "1de22c8442e14e54"
+            ]
+        ]
+    },
+    {
+        "id": "0cef9816751cec4d",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_name2",
+        "func": "if (msg.payload != \"Cancel\" && msg.payload != null && msg.payload != \"\") {\n    var name = msg.payload;\n    flow.set('name2', name);\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 380,
+        "wires": [
+            [
+                "1cee7cb93c800140"
+            ]
+        ]
+    },
+    {
+        "id": "dd4206d1be094680",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Temp_value",
+        "func": "var temperature = msg.payload;\nflow.set('temp', temperature);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab28cd8452f2481a",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set random",
+        "func": "flow.set('random', msg.random);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc270e174b4f21ed",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Sector_set_max",
+        "func": "flow.set('sectorMax', msg.payload);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cfb178066dd1367",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Sector_set_min",
+        "func": "flow.set('sectorMin', msg.payload);\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a7ef31a0bff6316",
+        "type": "switch",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Switch_disable",
+        "property": "disable",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 540,
+        "y": 720,
+        "wires": [
+            [
+                "359272b7f0e1d9cc",
+                "bd9f3cef57276ea7",
+                "c51b37dc3cf22a5d"
+            ]
+        ]
+    },
+    {
+        "id": "f3b1a0b2bc419e85",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Disable _var_set",
+        "func": "flow.set('disable', 0);\nflow.set('status', 1);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cfd3048549abb90",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "New_game",
+        "x": 750,
+        "y": 860,
+        "wires": [
+            [
+                "09368c099d9d0816"
+            ]
+        ]
+    },
+    {
+        "id": "09368c099d9d0816",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Count_set",
+        "func": "if (msg.payload == \"OK\"){\n    if (flow.get('status') == 1) {\n        if (flow.get('name1') == null){\n            flow.set('name1', \"Hráč 1\");\n        }\n        if (flow.get('name2') == null){\n            flow.set('name2', \"Hráč 2\");\n        }\n        flow.set('count1', 0);\n        flow.set('count2', 0);\n        flow.set('count3', 0);\n        flow.set('count4', 0);\n        flow.set('disable', 1);\n        flow.set('counting', 0);\n        return msg;\n    }\n}\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 860,
+        "wires": [
+            [
+                "090811d772df6521",
+                "b67cfbe952e47475",
+                "2b2628e1d7232f34",
+                "c51b37dc3cf22a5d"
+            ]
+        ]
+    },
+    {
+        "id": "090811d772df6521",
+        "type": "delay",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Delay_random",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1220,
+        "y": 720,
+        "wires": [
+            [
+                "359272b7f0e1d9cc"
+            ]
+        ]
+    },
+    {
+        "id": "2039635309c00ca6",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "New_set",
+        "x": 740,
+        "y": 640,
+        "wires": [
+            [
+                "b3b5ce9432cc0e5c"
+            ]
+        ]
+    },
+    {
+        "id": "dc1f835466cd4b15",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "6e439243f014d9f9",
+        "order": 1,
+        "width": 10,
+        "height": 2,
+        "name": "Service",
+        "label": "",
+        "format": "<font size = 6>{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2140,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b67cfbe952e47475",
+        "type": "random",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Random_player_start",
+        "low": "5",
+        "high": "6",
+        "inte": "true",
+        "property": "random",
+        "x": 1240,
+        "y": 900,
+        "wires": [
+            [
+                "497a260ebf81d931"
+            ]
+        ]
+    },
+    {
+        "id": "ba3946e00db561cb",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Change_name",
+        "func": "var name1 = flow.get('name_1');\nvar name2 = flow.get('name_2');\n\nif ((Math.floor(flow.get('counting') / 2)) % 2 === 0) {\n    // Pokud je sudá, výstupem bude name1\n    msg.payload = \"Podání \" + name1;\n} else {\n    // Pokud je lichá, výstupem bude name2\n    msg.payload = \"Podání \" + name2;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 900,
+        "wires": [
+            [
+                "dc1f835466cd4b15"
+            ]
+        ]
+    },
+    {
+        "id": "bd9f3cef57276ea7",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Counter",
+        "func": "var counting = flow.get('counting') || 0;\n\nif (msg.payload == 1 || msg.payload == 2){\n    counting +=1;\n    flow.set('counting', counting);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 840,
+        "wires": [
+            [
+                "ba3946e00db561cb"
+            ]
+        ]
+    },
+    {
+        "id": "497a260ebf81d931",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_random_name",
+        "func": "if (msg.random == 5){\n    flow.set('name_1', flow.get('name1'));\n    flow.set('name_2', flow.get('name2'));\n}\nelse {\n    flow.set('name_1', flow.get('name2'));\n    flow.set('name_2', flow.get('name1'));\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 900,
+        "wires": [
+            [
+                "ba3946e00db561cb"
+            ]
+        ]
+    },
+    {
+        "id": "2b2628e1d7232f34",
+        "type": "uuid",
+        "z": "2c41a2bd.aa36ae",
+        "uuidVersion": "v1",
+        "namespaceType": "",
+        "namespace": "",
+        "namespaceCustom": "",
+        "name": "",
+        "field": "random",
+        "fieldType": "msg",
+        "x": 1190,
+        "y": 960,
+        "wires": [
+            [
+                "ab28cd8452f2481a"
+            ]
+        ]
+    },
+    {
+        "id": "08975feac78b50ba",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Send_msg",
+        "func": "if (flow.get('sendMsg') === true){\n    flow.set('sendMsg', false);\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 500,
+        "wires": [
+            [
+                "1f5a9a045c876307"
+            ]
+        ]
+    },
+    {
+        "id": "7466d7203a7d8e3e",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "ba84bca1307aab41",
+        "order": 1,
+        "width": 10,
+        "height": 3,
+        "name": "Timer",
+        "label": "",
+        "format": "<font size = 8>{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2130,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c51b37dc3cf22a5d",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Timer",
+        "func": "var startTime = flow.get('startTime') || 0;\nvar timerInterval = flow.get('timerInterval');\n\nfunction formatTime(seconds) {\n    var hours = Math.floor(seconds / 3600);\n    var minutes = Math.floor((seconds % 3600) / 60);\n    var remainingSeconds = seconds % 60;\n    return ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + remainingSeconds).slice(-2);\n}\n\nfunction elapsedTime() {\n    var elapsedTime = Math.floor((Date.now() - startTime) / 1000);\n    return formatTime(elapsedTime);\n}\n\nfunction startTimer() {\n    timerInterval = setInterval(function () {\n        node.send({ payload: elapsedTime() });\n        flow.set('timerInterval', timerInterval);\n    }, 1000);\n}\n\nfunction stopTimer() {\n    clearInterval(timerInterval); \n    flow.set('timerInterval', null);\n}\n\nif (msg.payload == \"OK\") {\n    stopTimer(); \n    startTimer(); \n    startTime = Date.now(); \n    flow.set('startTime', startTime); \n}\nelse if (global.get('disable') == 0 || flow.get('status') == 1) {\n    stopTimer();\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 780,
+        "wires": [
+            [
+                "7466d7203a7d8e3e"
+            ]
+        ]
+    },
+    {
+        "id": "6ad3905053754181",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_time",
+        "func": "msg.tema = new Date().toLocaleTimeString();\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1200,
+        "y": 1200,
+        "wires": [
+            [
+                "8e3ed2c241ce0c8c"
+            ]
+        ]
+    },
+    {
+        "id": "4ccf590a11690b34",
+        "type": "inject",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1200,
+        "wires": [
+            [
+                "6ad3905053754181"
+            ]
+        ]
+    },
+    {
+        "id": "af964ccbb4b399f9",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_token",
+        "func": "if (msg.payload != \"Cancel\" && msg.payload != null && msg.payload != \"\") {\n    var token = msg.payload;\n    flow.set('token', token);\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 440,
+        "wires": [
+            [
+                "c54af7f6e3233969"
+            ]
+        ]
+    },
+    {
+        "id": "05dbefc7cac4fe24",
+        "type": "status",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "scope": [
+            "eafde4cc4f9e5e04",
+            "784332c655596350"
+        ],
+        "x": 100,
+        "y": 1260,
+        "wires": [
+            [
+                "4ad7e57f6326191e"
+            ]
+        ]
+    },
+    {
+        "id": "83350613caed15ba",
+        "type": "ui_led",
+        "z": "2c41a2bd.aa36ae",
+        "order": 1,
+        "group": "2165f796bb8efd15",
+        "width": 2,
+        "height": 2,
+        "label": "",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "red",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "green",
+                "valueType": "str"
+            },
+            {
+                "color": "#ed9b0c",
+                "value": "yellow",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Status_indicator",
+        "x": 2160,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "4ad7e57f6326191e",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "status.fill",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 1260,
+        "wires": [
+            [
+                "83350613caed15ba",
+                "5da606340ee0e5a2"
+            ]
+        ]
+    },
+    {
+        "id": "cedb0ee75d8c5d73",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "prompt",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Set_player_1",
+        "x": 530,
+        "y": 320,
+        "wires": [
+            [
+                "dd6131b23db63a65"
+            ]
+        ]
+    },
+    {
+        "id": "aa0a5a30a4677a3e",
+        "type": "ui_button",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Player_1",
+        "group": "43ad30c161a69b3e",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "+",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Zadej jméno hráče 1:",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "cedb0ee75d8c5d73"
+            ]
+        ]
+    },
+    {
+        "id": "a16539293629333b",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "43ad30c161a69b3e",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "name": "Player_1_text",
+        "label": "    ",
+        "format": "<font size = 6>{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2160,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "04750db73d1d3dd5",
+        "type": "ui_button",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Player_2",
+        "group": "35669f3d67377472",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "+",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Zadej jméno hráče 2:",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 380,
+        "wires": [
+            [
+                "da1626f5434b5b36"
+            ]
+        ]
+    },
+    {
+        "id": "da1626f5434b5b36",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "prompt",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Set_player_2",
+        "x": 530,
+        "y": 380,
+        "wires": [
+            [
+                "0cef9816751cec4d"
+            ]
+        ]
+    },
+    {
+        "id": "10c7cc300e0ebe78",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "35669f3d67377472",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "name": "Player_2_text",
+        "label": "",
+        "format": "<font size = 6>{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2160,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1f5a9a045c876307",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "JSON",
+        "func": "msg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer \" + msg.token\n};\n\nmsg.payload = \n{\n    \"payloadId\": msg.payload,\n    \"temperature\": msg.temperature,\n    \"displayName1\": msg.displayName1,\n    \"displayName2\": msg.displayName2,\n    \"score1\": msg.score1,\n    \"score2\": msg.score2\n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 500,
+        "wires": [
+            [
+                "f4c7962a0f14c9cf"
+            ]
+        ]
+    },
+    {
+        "id": "f4c7962a0f14c9cf",
+        "type": "json",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 1050,
+        "y": 500,
+        "wires": [
+            [
+                "d01d391a9e428a11"
+            ]
+        ]
+    },
+    {
+        "id": "1de22c8442e14e54",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "name1",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 320,
+        "wires": [
+            [
+                "a16539293629333b"
+            ]
+        ]
+    },
+    {
+        "id": "1cee7cb93c800140",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "name2",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 380,
+        "wires": [
+            [
+                "10c7cc300e0ebe78"
+            ]
+        ]
+    },
+    {
+        "id": "5da606340ee0e5a2",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Set_status",
+        "func": "if (msg.payload == \"green\"){\n    flow.set('status', 1);\n}\nelse {\n    flow.set('status', 0);\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1470,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "992dcbd173d06c57",
+        "type": "debug",
+        "z": "2c41a2bd.aa36ae",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2140,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "358034689e0b84e8",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Missing token",
+        "x": 2160,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f8c3d50e7b9dffa",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Neplatný token! ",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1720,
+        "y": 1140,
+        "wires": [
+            [
+                "358034689e0b84e8"
+            ]
+        ]
+    },
+    {
+        "id": "cd388c7d2828268a",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Check_statusCode",
+        "func": "if (msg.statusCode != 201){\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1490,
+        "y": 500,
+        "wires": [
+            [
+                "9e7add5ff416d5c1"
+            ]
+        ]
+    },
+    {
+        "id": "2528d5c9193c0d3d",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": false,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Missing token",
+        "x": 2160,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e7add5ff416d5c1",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Hra nebyla uložena! Neplatný token!",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1720,
+        "y": 500,
+        "wires": [
+            [
+                "2528d5c9193c0d3d"
+            ]
+        ]
+    },
+    {
+        "id": "16bfa63bab25ddae",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Check_token",
+        "func": "var token = flow.get('token');\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Bearer \" + token\n};\nmsg.payload = \n{\n    \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1120,
+        "wires": [
+            [
+                "3d9cbc0beb33472f"
+            ]
+        ]
+    },
+    {
+        "id": "744402425448a944",
+        "type": "http request",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://pingpongpal.vetrovec.com/api/v1/iot/verify",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 950,
+        "y": 1120,
+        "wires": [
+            [
+                "1f834527842bf710"
+            ]
+        ]
+    },
+    {
+        "id": "3d9cbc0beb33472f",
+        "type": "json",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 730,
+        "y": 1120,
+        "wires": [
+            [
+                "744402425448a944"
+            ]
+        ]
+    },
+    {
+        "id": "1f834527842bf710",
+        "type": "function",
+        "z": "2c41a2bd.aa36ae",
+        "name": "Check_statusCode",
+        "func": "if (msg.statusCode != 201){\n    return msg;\n}\nelse {\n    msg.payload = 1;\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1230,
+        "y": 1120,
+        "wires": [
+            [
+                "ce0c7a24c0c213e8",
+                "bcbd17735ea75664"
+            ]
+        ]
+    },
+    {
+        "id": "bcbd17735ea75664",
+        "type": "switch",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1450,
+        "y": 1100,
+        "wires": [
+            [
+                "8f71e5c7f0a916a7"
+            ]
+        ]
+    },
+    {
+        "id": "ce0c7a24c0c213e8",
+        "type": "switch",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1450,
+        "y": 1140,
+        "wires": [
+            [
+                "3f8c3d50e7b9dffa"
+            ]
+        ]
+    },
+    {
+        "id": "4f368b1ca8f0fa26",
+        "type": "ui_button",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "group": "77e5bfd6714b51f1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Vložit token",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Zadej token.",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "04d46430cdc96359"
+            ]
+        ]
+    },
+    {
+        "id": "04d46430cdc96359",
+        "type": "ui_toast",
+        "z": "2c41a2bd.aa36ae",
+        "position": "prompt",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Set_token",
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "af964ccbb4b399f9"
+            ]
+        ]
+    },
+    {
+        "id": "d26d1c5eec6c993c",
+        "type": "ui_text",
+        "z": "2c41a2bd.aa36ae",
+        "group": "77e5bfd6714b51f1",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 2130,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c54af7f6e3233969",
+        "type": "change",
+        "z": "2c41a2bd.aa36ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "token",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 440,
+        "wires": [
+            [
+                "d26d1c5eec6c993c"
+            ]
+        ]
+    }
+]
