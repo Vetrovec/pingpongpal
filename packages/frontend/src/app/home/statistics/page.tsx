@@ -31,11 +31,18 @@ ChartJS.register(
   LineElement,
 );
 
+ChartJS.defaults.color = "white";
+
 export default function Home() {
   const { data } = useSWR<IGetStatisticsResponse>(
     "/api/v1/statistics",
     fetcher,
   );
+
+  const chartOptions = {
+    responsive: true,
+    aspectRatio: 3,
+  };
 
   const topGameCount = data?.count
     .map((row) => ({
@@ -193,20 +200,14 @@ export default function Home() {
       <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Users by total wins</h2>
         <div>
-          <Bar
-            options={{ responsive: true, aspectRatio: 3 }}
-            data={totalWinsData}
-          />
+          <Bar options={chartOptions} data={totalWinsData} />
         </div>
       </Tile>
 
       <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Temperatures</h2>
         <div>
-          <Bar
-            options={{ responsive: true, aspectRatio: 3 }}
-            data={temperatureData}
-          />
+          <Bar options={chartOptions} data={temperatureData} />
         </div>
       </Tile>
     </div>
