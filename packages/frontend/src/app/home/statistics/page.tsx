@@ -171,22 +171,28 @@ export default function Home() {
 
       <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Games played</h2>
-        <div className="w-full mx-auto" style={{ maxWidth: "300px" }}>
+        <div className="mx-auto" style={{ maxHeight: "300px" }}>
           <Pie data={gameCountData} />
         </div>
       </Tile>
 
       <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Users by total wins</h2>
-        <div className="w-full mx-auto" style={{ maxWidth: "500px" }}>
-          <Bar data={totalWinsData} />
+        <div>
+          <Bar
+            options={{ responsive: true, aspectRatio: 3 }}
+            data={totalWinsData}
+          />
         </div>
       </Tile>
 
       <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Temperatures</h2>
-        <div className="w-full mx-auto" style={{ maxWidth: "500px" }}>
-          <Bar data={temperatureData} />
+        <div>
+          <Bar
+            options={{ responsive: true, aspectRatio: 3 }}
+            data={temperatureData}
+          />
         </div>
       </Tile>
     </div>
