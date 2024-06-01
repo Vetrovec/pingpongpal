@@ -37,11 +37,18 @@ export default function Home() {
     fetcher,
   );
 
+  const topGameCount = data?.count
+    .map((row) => ({
+      nickname: row.nickname,
+      gameCount: parseInt(row.gameCount, 10),
+    }))
+    .toSorted((a, b) => b.gameCount - a.gameCount)
+    .slice(0, 10);
   const gameCountData = {
-    labels: data?.count.map((row) => row.nickname),
+    labels: topGameCount?.map((row) => row.nickname),
     datasets: [
       {
-        data: data?.count.map((row) => parseInt(row.gameCount, 10)),
+        data: topGameCount?.map((row) => row.gameCount),
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -57,14 +64,21 @@ export default function Home() {
     ],
   };
 
+  const topTotalWins = data?.leaderboard
+    .map((row) => ({
+      nickname: row.nickname,
+      totalWins: parseInt(row.totalWins, 10),
+    }))
+    .toSorted((a, b) => b.totalWins - a.totalWins)
+    .slice(0, 10);
   const totalWinsData = {
-    labels: data?.leaderboard.map((row) => row.nickname),
+    labels: topTotalWins?.map((row) => row.nickname),
     datasets: [
       {
         label: "Total Wins",
 
-        data: data?.leaderboard.map((row) => parseInt(row.totalWins)),
-        backgroundColor: data?.leaderboard.map((_, index) => {
+        data: topTotalWins?.map((row) => row.totalWins),
+        backgroundColor: topTotalWins?.map((_, index) => {
           const colors = [
             "rgba(75, 192, 192, 0.6)",
             "rgba(153, 102, 255, 0.6)",
