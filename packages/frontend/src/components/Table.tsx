@@ -1,6 +1,6 @@
 interface TableProps {
   columns: string[];
-  rows?: string[][];
+  rows?: React.ReactNode[][];
 }
 
 export default function Table({ columns, rows }: TableProps) {

@@ -1,5 +1,6 @@
 "use client";
 
+import Tile from "@/components/Tile";
 import { mutationFetcher } from "@/helpers/fetcher";
 import { useUser } from "@/hooks/useUser";
 import Link from "next/link";
@@ -37,7 +38,7 @@ export default function HomeLayout({
       </div>
 
       <div className="container flex p-2 mx-auto gap-1">
-        <div className="w-48 flex flex-col items-stretch gap-2 border border-border p-4 bg-secondary">
+        <Tile className="w-48 flex flex-col items-stretch gap-2">
           <Link href="/home/history">
             <button
               className={`w-full p-1 rounded-md ${
@@ -71,7 +72,7 @@ export default function HomeLayout({
               Access Keys
             </button>
           </Link>
-        </div>
+        </Tile>
         <div className="flex-grow">{children}</div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import {
 } from "chart.js";
 import { IGetStatisticsResponse } from "@pingpongpal/shared";
 import Table from "@/components/Table";
+import Tile from "@/components/Tile";
 
 ChartJS.register(
   ArcElement,
@@ -117,24 +118,24 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className="flex flex-col gap-4 border border-border p-4 bg-secondary">
+    <div className="flex flex-col gap-1">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Games played</h2>
         <Table
           columns={["Player", "Count"]}
           rows={data?.count.map((row) => [row.nickname, row.gameCount])}
         />
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Total wins</h2>
         <Table
           columns={["Player", "Wins"]}
           rows={data?.leaderboard.map((row) => [row.nickname, row.totalWins])}
         />
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Temperatures</h2>
         <Table
           columns={["Temperature type", "Temperature"]}
@@ -153,9 +154,9 @@ export default function Home() {
             ],
           ]}
         />
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Win/Loss Ratio</h2>
         <Table
           columns={["Player", "Wins", "Losses", "Ratio"]}
@@ -166,28 +167,28 @@ export default function Home() {
             roundToTwoDecimals(row.winLossRatio) + "%",
           ])}
         />
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Games played</h2>
         <div className="w-full mx-auto" style={{ maxWidth: "300px" }}>
           <Pie data={gameCountData} />
         </div>
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Users by total wins</h2>
         <div className="w-full mx-auto" style={{ maxWidth: "500px" }}>
           <Bar data={totalWinsData} />
         </div>
-      </div>
+      </Tile>
 
-      <div className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Temperatures</h2>
         <div className="w-full mx-auto" style={{ maxWidth: "500px" }}>
           <Bar data={temperatureData} />
         </div>
-      </div>
-    </>
+      </Tile>
+    </div>
   );
 }

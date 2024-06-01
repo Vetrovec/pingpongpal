@@ -3,6 +3,8 @@
 import Button from "@/components/Button";
 import FormattedDate from "@/components/FormattedDate";
 import Input from "@/components/Input";
+import Table from "@/components/Table";
+import Tile from "@/components/Tile";
 import { fetcher, mutationFetcher } from "@/helpers/fetcher";
 import {
   ICreateAccessKeyRequest,
@@ -14,7 +16,7 @@ import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 
 export default function Home() {
-  const { data: accessKeyData } = useSWR<IListAccessKeysResponse>(
+  const { data } = useSWR<IListAccessKeysResponse>(
     "/api/v1/access-keys",
     fetcher,
   );
@@ -37,66 +39,51 @@ export default function Home() {
   );
 
   return (
-    <>
-      <div className="flex flex-col gap-4 border border-border p-4 bg-secondary">
+    <div className="flex flex-col gap-1">
+      <Tile className="flex flex-col gap-4">
         <h2 className="text-xl font-bold text-main">Access keys</h2>
-        <table className="w-full border border-border">
-          <thead>
-            <tr className="text-main">
-              <th className="border border-border p-2">Label</th>
-              <th className="border border-border p-2">Key</th>
-              <th className="border border-border p-2">Created At</th>
-              <th className="border border-border p-2">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {accessKeyData?.accessKeys.map((accessKey) => (
-              <tr key={accessKey.key}>
-                <td className="border border-border p-2">{accessKey.label}</td>
-                <td className="border border-border p-2">{accessKey.key}</td>
-                <td className="border border-border p-2">
-                  <FormattedDate date={new Date(accessKey.createdAt)} />
-                </td>
-                <td className="border border-border p-2">
-                  <div className="flex justify-around">
-                    <button
-                      className="text-center text-red-500"
-                      onClick={() =>
-                        triggerDeleteAccessKey({ key: accessKey.key })
-                      }
-                    >
-                      Revoke
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+        <Table
+          columns={["Label", "Key", "Created At", "Actions"]}
+          rows={data?.accessKeys.map((accessKey, i) => [
+            accessKey.label,
+            accessKey.key,
+            <FormattedDate key={i} date={new Date(accessKey.createdAt)} />,
+            <div key={i} className="flex justify-around">
+              <button
+                className="text-center text-red-500"
+                onClick={() => triggerDeleteAccessKey({ key: accessKey.key })}
+              >
+                Revoke
+              </button>
+            </div>,
+          ])}
+        />
+      </Tile>
 
-      <form
-        className="flex flex-col gap-4 border border-border p-4 mt-1 bg-secondary"
-        onSubmit={(event) => {
-          event.preventDefault();
-          triggerCreateAccessKey({
-            label: accessKeyLabel,
-          });
-        }}
-      >
-        <h2 className="text-xl font-bold text-main">Create Access key</h2>
-        <div className="flex items-center gap-4">
-          <Input
-            className="flex-grow"
-            placeholder="Label"
-            value={accessKeyLabel}
-            onChange={(event) => setAccessKeyLabel(event.target.value)}
-          />
-          <Button type="submit" className="px-12 py-2 border-none rounded-lg">
-            Create Access key
-          </Button>
-        </div>
-      </form>
-    </>
+      <Tile>
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={(event) => {
+            event.preventDefault();
+            triggerCreateAccessKey({
+              label: accessKeyLabel,
+            });
+          }}
+        >
+          <h2 className="text-xl font-bold text-main">Create Access key</h2>
+          <div className="flex items-center gap-4">
+            <Input
+              className="flex-grow"
+              placeholder="Label"
+              value={accessKeyLabel}
+              onChange={(event) => setAccessKeyLabel(event.target.value)}
+            />
+            <Button type="submit" className="px-12 py-2 border-none rounded-lg">
+              Create Access key
+            </Button>
+          </div>
+        </form>
+      </Tile>
+    </div>
   );
 }
