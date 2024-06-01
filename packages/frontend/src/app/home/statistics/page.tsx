@@ -15,6 +15,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
+import { IGetStatisticsResponse } from "@pingpongpal/shared";
 
 ChartJS.register(
   ArcElement,
@@ -29,13 +30,16 @@ ChartJS.register(
 );
 
 export default function Home() {
-  const { data } = useSWR("/api/v1/statistics", fetcher);
+  const { data } = useSWR<IGetStatisticsResponse>(
+    "/api/v1/statistics",
+    fetcher,
+  );
 
   const gameCountData = {
-    labels: data?.count.map((row: any) => row.nickname),
+    labels: data?.count.map((row) => row.nickname),
     datasets: [
       {
-        data: data?.count.map((row: any) => parseInt(row.gameCount)),
+        data: data?.count.map((row) => parseInt(row.gameCount, 10)),
         backgroundColor: [
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
@@ -52,13 +56,13 @@ export default function Home() {
   };
 
   const totalWinsData = {
-    labels: data?.leaderboard.map((row: any) => row.nickname),
+    labels: data?.leaderboard.map((row) => row.nickname),
     datasets: [
       {
         label: "Total Wins",
 
-        data: data?.leaderboard.map((row: any) => parseInt(row.totalWins)),
-        backgroundColor: data?.leaderboard.map((_: any, index: number) => {
+        data: data?.leaderboard.map((row) => parseInt(row.totalWins)),
+        backgroundColor: data?.leaderboard.map((_, index) => {
           const colors = [
             "rgba(75, 192, 192, 0.6)",
             "rgba(153, 102, 255, 0.6)",
@@ -103,7 +107,7 @@ export default function Home() {
   };
 
   // Helper function to round a number to two decimal places
-  const roundToTwoDecimals = (value: any) => {
+  const roundToTwoDecimals = (value: string) => {
     const numValue = parseFloat(value);
     if (!isNaN(numValue)) {
       return numValue.toFixed(2);
