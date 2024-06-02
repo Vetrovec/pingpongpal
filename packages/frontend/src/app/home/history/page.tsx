@@ -29,11 +29,12 @@ export default function History() {
         <select
           className="border border-border px-2 py-1 bg-secondary focus:outline-none"
           value={pageSize}
-          onChange={(e) =>
+          onChange={(e) => {
+            setPageIndex(0);
             setPageSize(
               parseInt(e.target.value, 10) as (typeof pageSizes)[number],
-            )
-          }
+            );
+          }}
         >
           {pageSizes.map((size) => (
             <option key={size} value={size}>
