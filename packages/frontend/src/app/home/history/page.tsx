@@ -8,7 +8,7 @@ import { IListGamesResponse } from "@pingpongpal/shared";
 import { useState } from "react";
 import useSWR from "swr";
 
-export default function Home() {
+export default function History() {
   const pageSizes = [5, 10, 20] as const;
   const [pageSize, setPageSize] = useState<(typeof pageSizes)[number]>(
     pageSizes[0],
