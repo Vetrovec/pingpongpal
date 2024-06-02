@@ -15,7 +15,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 
-export default function Home() {
+export default function AccessKeys() {
   const { data } = useSWR<IListAccessKeysResponse>(
     "/api/v1/access-keys",
     fetcher,

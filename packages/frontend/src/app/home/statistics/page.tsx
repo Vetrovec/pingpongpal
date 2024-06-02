@@ -33,7 +33,7 @@ ChartJS.register(
 
 ChartJS.defaults.color = "white";
 
-export default function Home() {
+export default function Statistics() {
   const { data } = useSWR<IGetStatisticsResponse>(
     "/api/v1/statistics",
     fetcher,
